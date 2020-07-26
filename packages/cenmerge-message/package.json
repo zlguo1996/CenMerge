@@ -1,5 +1,5 @@
 {
-  "name": "cenmerge-context",
+  "name": "cenmerge-message",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Guo Zile <zlguo1996@gmail.com>",
@@ -26,13 +26,6 @@
     "url": "https://github.com/zlguo1996/CenMerge/issues"
   },
   "peerDependencies": {
-    "automerge": "^0.14.1",
-    "ws": "^7.3.1"
-  },
-  "devDependencies": {
-    "@types/ws": "^7.2.6"
-  },
-  "dependencies": {
-    "cenmerge-message": "*"
+    "automerge": "^0.14.1"
   }
 }

@@ -19,12 +19,19 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "ts-node-dev ./src/index.ts"
   },
   "bugs": {
     "url": "https://github.com/zlguo1996/CenMerge/issues"
   },
   "dependencies": {
-    "automerge": "^0.14.1"
+    "automerge": "^0.14.1",
+    "cenmerge-context": "*",
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^7.2.6",
+    "ts-node-dev": "^1.0.0-pre.56"
   }
 }

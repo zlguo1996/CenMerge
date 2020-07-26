@@ -1,10 +1,6 @@
 import * as AutoMerge from 'automerge'
 import WebSocket from 'ws'
-
-interface Frame {
-    type: 'automerge',
-    msg: AutoMerge.Message,
-}
+import {ClientMessage, ServerMessage, encodeMessage, decodeMessage} from 'cenmerge-message'
 
 export class Connection {
     private socket: WebSocket
@@ -19,7 +15,7 @@ export class Connection {
         this.docSet.registerHandler((docId, doc) => onChange(docId, doc, this.docSet))
         this.connection = new AutoMerge.Connection(this.docSet, (msg) => {
             this.socket.send(
-                JSON.stringify({
+                encodeMessage<ServerMessage>({
                     type: 'automerge',
                     msg: msg
                 })
@@ -29,9 +25,9 @@ export class Connection {
         this.handleMessage = this.handleMessage.bind(this)
         this.socket.on('message', (message: string) => {
             try {
-                const frame = JSON.parse(message)
+                const frame = decodeMessage<ClientMessage>(message)
                 console.assert(typeof frame === 'object' && frame !== null)
-                this.handleMessage(frame as Frame)
+                this.handleMessage(frame as ClientMessage)
             }
             catch (e) {
                 throw e
@@ -39,7 +35,7 @@ export class Connection {
         })
     }
 
-    handleMessage(frame: Frame) {
+    handleMessage(frame: ClientMessage) {
         if (frame.type === 'automerge') {
             this.connection.receiveMsg(frame.msg)
         }
