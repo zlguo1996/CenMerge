@@ -1,0 +1,37 @@
+{
+  "name": "cenmerge-context",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Guo Zile <zlguo1996@gmail.com>",
+  "homepage": "https://github.com/zlguo1996/CenMerge#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlguo1996/CenMerge.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/zlguo1996/CenMerge/issues"
+  },
+  "peerDependencies": {
+    "automerge": "^0.14.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^7.2.6",
+    "ts-node-dev": "^1.0.0-pre.56"
+  },
+  "dependencies": {
+    "ws": "^7.3.1"
+  }
+}

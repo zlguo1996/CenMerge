@@ -1,0 +1,30 @@
+{
+  "name": "cenmerge-server",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Guo Zile <zlguo1996@gmail.com>",
+  "homepage": "https://github.com/zlguo1996/CenMerge#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlguo1996/CenMerge.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/zlguo1996/CenMerge/issues"
+  },
+  "dependencies": {
+    "automerge": "^0.14.1"
+  }
+}
